@@ -1,13 +1,11 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/Robinrrr10/ht/cmd"
+	"./cmd"
 )
 
 func main() {
-	fmt.Println("Start")
+	//fmt.Println("Start")
 	cmd.Execute()
-	fmt.Println("end")
+	//fmt.Println("end")
 }
