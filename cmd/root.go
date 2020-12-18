@@ -12,7 +12,7 @@ func init() {
 func Execute() {
 
 	cmdParams := os.Args
-	if len(cmdParams) <= 1 {
+	if len(cmdParams) < 1 {
 		rootHelp()
 	} else {
 		url, method, body, headers := giveRequestArguments(cmdParams)
@@ -20,6 +20,7 @@ func Execute() {
 		fmt.Println("method:", method)
 		fmt.Println("body:", body)
 		fmt.Println("headers:", headers)
+		Call(url, method, body, headers)
 	}
 }
 
