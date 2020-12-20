@@ -2,21 +2,14 @@ package pkg
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"strings"
 )
 
 func CallGet(url string) {
-	//fmt.Println("in call get client")
-	//fmt.Println("URL:", url)
+	fmt.Println("in call get client----")
 	resp, err := http.Get(url)
-	defer resp.Body.Close()
-	if err != nil {
-		fmt.Println("ERROR:", err)
-	}
-	body, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
+	responseHandler(resp, err)
 }
 
 func CallGetWithHeader(url string, headers []string) {
@@ -29,11 +22,5 @@ func CallGetWithHeader(url string, headers []string) {
 	}
 	client := &http.Client{}
 	resp, err := client.Do(req)
-	fmt.Println("STATUS CODE:", resp.StatusCode)
-	defer resp.Body.Close()
-	if err != nil {
-		fmt.Println("ERROR:", err)
-	}
-	body, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
+	responseHandler(resp, err)
 }
