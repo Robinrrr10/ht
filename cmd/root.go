@@ -10,7 +10,6 @@ func init() {
 }
 
 func Execute() {
-
 	cmdParams := os.Args
 	if len(cmdParams) < 1 {
 		rootHelp()
