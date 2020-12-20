@@ -8,15 +8,26 @@ func giveRequestArguments(args []string) (url string, method string, body string
 		}
 		if arg == "-m" {
 			method = args[inx+1]
+		} else if arg == "GET" || arg == "POST" {
+			method = arg
 		}
 		if arg == "-b" {
 			body = args[inx+1]
 		}
 		if arg == "-h" {
-			//headers[eachHeaderCount] = args[inx+1]
 			headers = append(headers, args[inx+1])
 			eachHeaderCount++
 		}
+	}
+	if url == "" {
+		for inx, arg := range args {
+			if arg == "GET" || arg == "POST" {
+				url = args[inx+1]
+			}
+		}
+	}
+	if len(args) >= 2 && url == "" && args[1] != "-u" && args[1] != "-m" && args[1] != "-b" && args[1] != "-h" {
+		url = args[1]
 	}
 	return
 }
