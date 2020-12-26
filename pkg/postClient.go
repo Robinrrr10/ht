@@ -1,8 +1,6 @@
 package pkg
 
 import (
-	"fmt"
-	"io/ioutil"
 	"net/http"
 	"strings"
 )
@@ -13,13 +11,7 @@ func CallPost(url string, body string) {
 	req, err := http.NewRequest("POST", url, ioBody)
 	client := &http.Client{}
 	resp, err := client.Do(req)
-	fmt.Println("STATUS CODE:", resp.StatusCode)
-	if err != nil {
-		fmt.Println("ERROR:", err)
-	}
-	defer resp.Body.Close()
-	resBody, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(resBody))
+	responseHandler(resp, err)
 }
 
 func CallPostWithHeaders(url string, body string, headers []string) {
@@ -33,11 +25,5 @@ func CallPostWithHeaders(url string, body string, headers []string) {
 	}
 	client := &http.Client{}
 	resp, err := client.Do(req)
-	fmt.Println("STATUS CODE:", resp.StatusCode)
-	if err != nil {
-		fmt.Println("ERROR:", err)
-	}
-	defer resp.Body.Close()
-	resBody, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(resBody))
+	responseHandler(resp, err)
 }
