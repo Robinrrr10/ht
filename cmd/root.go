@@ -25,7 +25,7 @@ func Execute() {
 
 func rootHelp() {
 	fmt.Println("Supporting commands:")
-	fmt.Println("-m : --method : GET : POST")
+	fmt.Println("-m : --method : GET : POST : PUT")
 	fmt.Println("-u : --url")
 	fmt.Println("-h : --header")
 	fmt.Println("-b : --body")
