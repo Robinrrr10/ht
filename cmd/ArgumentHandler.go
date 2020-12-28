@@ -8,7 +8,7 @@ func giveRequestArguments(args []string) (url string, method string, body string
 		}
 		if arg == "-m" {
 			method = args[inx+1]
-		} else if arg == "GET" || arg == "POST" {
+		} else if arg == "GET" || arg == "POST" || arg == "DELETE" {
 			method = arg
 		}
 		if arg == "-b" {
@@ -21,7 +21,7 @@ func giveRequestArguments(args []string) (url string, method string, body string
 	}
 	if url == "" {
 		for inx, arg := range args {
-			if arg == "GET" || arg == "POST" {
+			if arg == "GET" || arg == "POST" || arg == "DELETE" {
 				url = args[inx+1]
 			}
 		}
