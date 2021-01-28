@@ -6,8 +6,6 @@ ht is command-line http client tool
 
 Linux / Unix
 
-Windows
-
 Mac
 
 # Pre request:
@@ -30,7 +28,7 @@ Build the project using below command
 
 ```go build```
 
-Now ```ht``` file should be generated in current path (For windows ```ht.exe``` file should be generated in current path)
+Now ```ht``` file should be generated in current path
 
 
 Set current path as environment variable.
