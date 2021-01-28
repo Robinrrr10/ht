@@ -21,11 +21,7 @@ func giveRequestArguments(args []string) (url string, method string, body string
 	}
 	if url == "" {
 		for inx, arg := range args {
-<<<<<<< HEAD
-			if arg == "GET" || arg == "POST" || arg == "DELETE" {
-=======
-			if arg == "GET" || arg == "POST" || arg == "PUT" {
->>>>>>> 0645caa82adcf732ed877b9950cdadeb87b8a5fc
+			if arg == "GET" || arg == "POST" || arg == "PUT" || arg == "DELETE" {
 				url = args[inx+1]
 			}
 		}

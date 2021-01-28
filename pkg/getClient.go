@@ -1,13 +1,12 @@
 package pkg
 
 import (
-	"fmt"
 	"net/http"
 	"strings"
 )
 
 func CallGet(url string) {
-	fmt.Println("in call get client----")
+	//fmt.Println("in call get client----")
 	resp, err := http.Get(url)
 	responseHandler(resp, err)
 }

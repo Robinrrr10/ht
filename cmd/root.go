@@ -15,10 +15,10 @@ func Execute() {
 		rootHelp()
 	} else {
 		url, method, body, headers := giveRequestArguments(cmdParams)
-		fmt.Println("url:", url)
-		fmt.Println("method:", method)
-		fmt.Println("body:", body)
-		fmt.Println("headers:", headers)
+		//fmt.Println("url:", url)
+		//fmt.Println("method:", method)
+		//fmt.Println("body:", body)
+		//fmt.Println("headers:", headers)
 		Call(url, method, body, headers)
 	}
 }
